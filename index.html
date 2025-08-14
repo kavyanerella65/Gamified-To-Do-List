@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Gamified To-Do List</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>🎯Level Up Your Life</h1>
+            </header>
+            <div class="avatars">
+                <img src="assets/avatars/avatar1.png" class="avatar selected" alt="Avatar 1" onclick="selectAvatar(this, 1)">
+                <img src="assets/avatars/avatar2.png" class="avatar" alt="Avatar 2" onclick="selectAvatar(this, 2)">
+                <img src="assets/avatars/avatar3.png" class="avatar" alt="Avatar 3" onclick="selectAvatar(this, 3)">
+                <img src="assets/avatars/avatar4.png" class="avatar" alt="Avatar 4" onclick="selectAvatar(this, 4)">
+                <img src="assets/avatars/avatar5.png" class="avatar" alt="Avatar 5" onclick="selectAvatar(this, 5)">
+            </div>
+            <div class="progress-ring">
+                <svg width="140" height="140">
+                    <defs>
+                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#00c6ff"/>
+                            <stop offset="100%" stop-color="#0072ff"/>
+                        </linearGradient>
+                    </defs>
+                    <circle class="progress-ring_bg" r="60" cx="70" cy="70"/>
+                    <circle class="progress-ring_progress" r="60" cx="70" cy="70"/>
+                </svg>
+                <div class="level-info">
+                    <span id="level">1</span>
+                    <small>Level</small>
+                    <div><span id="xp">0</span>/100 xp</div>
+                </div>
+            </div>
+            <div id="taskList" class="tasks"></div>
+            <div class="add-task">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn" onclick="addTask()">Add</button>
+            </div>
+            <div id="trophy" class="trophy">🏆</div>
+            <button id="musicToggleBtn" class="music-toggle">🔊Music On</button>
+        </div>
+        <audio id="introMusic" src="assets/sounds/intro.mp3" loop></audio>
+        <audio id="bgSound1" src="assets/sounds/avatar1_music.mp3" loop></audio>
+        <audio id="bgSound2" src="assets/sounds/avatar2_music.mp3" loop></audio>
+        <audio id="bgSound3" src="assets/sounds/avatar3_music.mp3" loop></audio>
+        <audio id="bgSound4" src="assets/sounds/avatar4_music.mp3" loop></audio>
+        <audio id="bgSound5" src="assets/sounds/avatar5_music.mp3" loop></audio>
+        <audio id="levelUpSound" src="assets/sounds/level up.mp3"></audio>
+        <audio id="clickSound" src="assets/sounds/click.mp3"></audio>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
